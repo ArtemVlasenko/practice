@@ -1,10 +1,11 @@
-def rectangle(a,b)
-    p=2*(a+b)
-   
+def calculate_diagonal(a,b)
+  2*(a+b)
 end
-puts rectangle(1,2)
 
-def rectangle(a,b)
-    s=a*b
+puts calculate_diagonal(1,2)
+
+def calculate_perimeter(a,b)
+  a*b
 end
-puts rectangle(1,2)
+
+puts calculate_perimeter(1,2)

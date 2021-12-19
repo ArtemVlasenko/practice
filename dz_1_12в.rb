@@ -1,20 +1,8 @@
-#puts c = ("\nв)x 25\n  x y")
+print("Введите число для переменной x: ")
+x_value = gets.chomp()
 
+print("Введите число для переменной y: ")
+y_value = gets.chomp()
 
-print("Введите число для переменной x: ") 
-number = gets.chomp()
-
-puts  (number + " 25 ")
-
-   
-
-print("Введите число для переменной x: ") 
-number = gets.chomp()
-
-print("Введите число для переменной y: ") 
-number = gets.chomp()
-
-
-puts  number + number
-
-
+puts "#{x_value} 25"
+puts "#{x_value} #{y_value}"

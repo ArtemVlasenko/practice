@@ -1,7 +1,8 @@
 def calc(x)
-    y=7*x**2-3*x+6
-              
+  7*x**2-3*x+6
 end
-  puts calc(2)
-  
-  
+
+# x = gets.chomp()
+x = 4
+
+puts "Y = #{calc(x)}"

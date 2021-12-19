@@ -1,12 +1,5 @@
 def calc(a)
-    x=12*a**2+7*a-16
-            
+  12*a**2+7*a-16
 end
-    puts calc(2)
 
-
-
-
-
-
-
+puts calc(2)

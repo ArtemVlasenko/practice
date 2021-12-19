@@ -1,5 +1,5 @@
-def square(r)
-    
-   d = r*2
+def diameter(r)
+   r*2
 end
-puts square(10)
+
+puts diameter(10)
