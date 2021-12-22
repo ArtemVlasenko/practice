@@ -1,12 +1,10 @@
 a = true
 b = false
-с = false
+c = false
 
-!(a && c) || b
+z = !(a && c) || b
 
-
-
-
+puts "Result: #{z}"
 
 
 # не (А и С) или В;

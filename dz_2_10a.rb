@@ -1,34 +1,24 @@
-# def twonumber(n)
+def decade_count(n)
+  n / 10
+end
 
-#   numbertens = n/10
-#   numberunits = n/1
-#   sumdigits = n+n
+def unit_count(n)
+  n / 1 # REDO
+end
 
+def sum_of_digits(n)
+  # REDO
+end
 
-# end
-
-
-
-
-
-
-def twodigit(n)
-
-  numbertens = n/10
-  numberunits = n/1
-  sumdigits = n+n
-
-  {
-    numbertens: numbertens,
-    numberunits: numberunits,
-    sumdigits: sumdigits
-  }
+def digits_multiply(n)
+  # REDO
 end
 
 print("Введите число n: ")
-sumdigits = gets.chomp().to_i
+number = gets.chomp().to_i
 
-result = twodigit(sumdigits)
-
-
-puts "Дано двузначное число: #{sumdigits} : #{result[:numbertens]} числа десятков в нем : #{result[:numberunits]} число единиц в нем : #{result[:sumdigits]} сумма его цифр"
+puts "Дано двузначное число: #{number}"
+puts "#{decade_count(number)} числа десятков в нем"
+puts "#{unit_count(number)} число единиц в нем"
+puts "#{sum_of_digits(number)} сумма его цифр"
+puts "#{digits_multiply(number)} произведение его цифр"

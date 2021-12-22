@@ -2,6 +2,8 @@ a = true
 b = false
 с = false
 
-a || (!(b && c))
+z = a || (!(b && c))
+
+puts "Result: #{z}"
 
 #А или (не (В и С)).

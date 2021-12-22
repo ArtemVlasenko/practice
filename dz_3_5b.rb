@@ -3,7 +3,7 @@ a = true
 b = false
 с = false
 
-!a && !b
+z = !a && !b
 
-
+puts "Result: #{z}"
 #  не А и не В
