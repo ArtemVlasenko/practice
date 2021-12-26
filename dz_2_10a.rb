@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-def decade_count(n)
-  a = n / 10
+def decade_count(number)
+  number / 10
 end
 
-def unit_count(n)
-  b = n % 10
+def unit_count(number)
+  number % 10
 end
 
-def sum_of_digits(n)
-  z = (n / 10) + (n % 10)
+def sum_of_digits(number)
+  decade_count(number) + unit_count(number)
 end
 
-def digits_multiply(n)
-  d = (n / 10) * (n % 10)
+def digits_multiply(number)
+  decade_count(number) * unit_count(number)
 end
 
 print('Введите число n: ')

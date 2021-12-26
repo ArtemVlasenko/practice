@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'helper'
+
 # а) входят ли в него цифры 4 или 7;
 
 #   if (x % 10 == 4), (x / 10 % 10 == 4), (x / 10 == 4), (x % 10 == 7), (x / 10 % 10 == 7), (x / 10 == 7)

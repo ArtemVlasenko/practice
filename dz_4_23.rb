@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
-x = 22
-a = x / 10
-b = x % 10
+number = 32
+decades = number / 10
+units = number % 10
 
-if a > b puts('Первая больше')
-
-if a < b puts('Вторая больше')
-
-if a == b puts('Они одинаковые')
+if decades > units
+  puts('Первая больше')
+end
+if decades < units
+  puts('Вторая больше')
+end
+if decades == units
+  puts('Они одинаковые')
+end

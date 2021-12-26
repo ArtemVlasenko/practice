@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-def unit_count(n)
-  b = n % 10 # REDO
+def unit_count(number)
+  number % 10
 end
 
-def decade_count(n)
-  a = (n % 100 / 10)
+def decade_count(number)
+  number % 100 / 10
 end
 
-def sum_of_digits(n)
-  z = (n / 100) + (n % 10) + (n % 10) # REDO
+def sum_of_digits(number)
+  (number / 100) + decade_count(number) + unit_count(number)
 end
 
-def digits_multiply(n)
-   d = (n / 100) * (n % 100 / 10) *(n % 10)   # REDO
+def digits_multiply(number)
+  (number / 100) * decade_count(number) * unit_count(number)
 end
 
 print("Введите число n: ")
