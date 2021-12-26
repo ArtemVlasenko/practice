@@ -1,17 +1,17 @@
 def decade_count(n)
-  n / 10
+  a = n / 10
 end
 
 def unit_count(n)
-  n / 1 # REDO
+  b = n % 10 # REDO
 end
 
 def sum_of_digits(n)
-  # REDO
+  z = (n / 10) + (n % 10)  # REDO
 end
 
 def digits_multiply(n)
-  # REDO
+   d = (n / 10) * (n % 10) # REDO
 end
 
 print("Введите число n: ")
@@ -22,3 +22,9 @@ puts "#{decade_count(number)} числа десятков в нем"
 puts "#{unit_count(number)} число единиц в нем"
 puts "#{sum_of_digits(number)} сумма его цифр"
 puts "#{digits_multiply(number)} произведение его цифр"
+
+# n=49
+# Десятков- 4
+# Единиц- 9
+# Сумма цифр- 13
+# Произведение цифр- 36

@@ -1,5 +1,6 @@
-def calc(a,b,c,d)
-  (b**2-4*a*c)
-end
+# frozen_string_literal: true
 
-puts calc(2,2,2)
+def calc(a, b, c)
+  (b**2 - 4 * a * c)
+end
+puts calc(2, 2, 2)

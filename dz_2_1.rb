@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def convert_sm_to_m(sm)
   sm / 100.0
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def convert_kg_to_tons(kg)
   kg / 1000.0
 end
