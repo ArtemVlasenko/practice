@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 a = true
 b = false
 с = false

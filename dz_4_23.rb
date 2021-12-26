@@ -1,9 +1,11 @@
-x=22
-a= x / 10
-b= x % 10
+# frozen_string_literal: true
 
-if a>b puts('Первая больше')
+x = 22
+a = x / 10
+b = x % 10
 
-if a<b puts('Вторая больше')
+if a > b puts('Первая больше')
 
-if a==b puts('Они одинаковые')
+if a < b puts('Вторая больше')
+
+if a == b puts('Они одинаковые')

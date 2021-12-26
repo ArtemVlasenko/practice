@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def unit_count(n)
   b = n % 10 # REDO
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #  A      B     C
 
 all_possible_values = [

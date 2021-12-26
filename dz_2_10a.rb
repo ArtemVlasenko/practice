@@ -1,21 +1,23 @@
+# frozen_string_literal: true
+
 def decade_count(n)
   a = n / 10
 end
 
 def unit_count(n)
-  b = n % 10 # REDO
+  b = n % 10
 end
 
 def sum_of_digits(n)
-  z = (n / 10) + (n % 10)  # REDO
+  z = (n / 10) + (n % 10)
 end
 
 def digits_multiply(n)
-   d = (n / 10) * (n % 10) # REDO
+  d = (n / 10) * (n % 10)
 end
 
-print("Введите число n: ")
-number = gets.chomp().to_i
+print('Введите число n: ')
+number = gets.chomp.to_i
 
 puts "Дано двузначное число: #{number}"
 puts "#{decade_count(number)} числа десятков в нем"
