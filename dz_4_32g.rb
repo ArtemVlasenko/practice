@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def summa(number)
   # print('Введите число n: ')
   # number = gets.chomp()
@@ -11,10 +13,10 @@ def summa(number)
   puts "d: #{d}"
   sum = a * b * c * d
 
-  if sum % a == 0
-    puts "Произведение всех цифр кратно, a"
-  else
-    puts "Произведение всех цифр не кратно, a"
+  if (sum % a) = 0
+    puts 'Произведение всех цифр кратно, a'
+  els
+    puts 'Произведение всех цифр не кратно, a'
   end
 end
 puts summa(3334)

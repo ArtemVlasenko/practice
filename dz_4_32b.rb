@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 def summa(number)
   # print('Введите число n: ')
@@ -13,18 +13,12 @@ def summa(number)
   puts "d: #{d}"
   sum = a + b + c + d
 
-  if sum % 3 == 0
-    puts "кратна трем"
-  else
-    puts "не кратна трем"
+  if sum % 3 = 0
+    puts 'кратна трем'
+  els puts 'не кратна трем'
   end
 end
 puts summa(3333)
-
-
-
-
-
 # def summa(x)
 #      x = a + b + c + d
 #      if x % 3 = 0

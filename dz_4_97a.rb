@@ -1,4 +1,4 @@
-Не решил!!!!
+# Не решил!!!!
 
 
 def max(a, b, c)
@@ -24,8 +24,9 @@ if (a > b)
   max == a
 else
   max == b
-
+end
 if (c > max)
   max == c
 end
-puts max(2, 2, 3)
+end
+puts max(2, 4, 3)
