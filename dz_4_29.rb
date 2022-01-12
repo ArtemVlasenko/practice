@@ -8,7 +8,7 @@ def three_numbers(number)
   a = number % 10 # нашли 3-цифру
   b = number / 10 % 10 # нашли 2-ю цифру
   c = number / 10 # нашли 1 - ю цифру
-  sum = (a**3 + b**3 + c**3)
+  sum = (a**3) + (b**3) + (c**3)
 
   if sum == square
     puts 'Равен'
