@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-[1,2,3].each do |i|
-  break if i = 2
-  puts i, ""
+4.times do
+  (1..10).each do |i|
+    print "#{i} "
+  end
+  puts
 end

@@ -17,6 +17,8 @@ def average_number(a1 = 1, a2 = 0, a3 = 10)
   if a1.between?(a2, a3)
 
     puts "yt d[jlbn"
+  elsif a2.between?(a1, a3)
+    puts
   end
 end
 
