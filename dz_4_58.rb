@@ -11,10 +11,10 @@ require_relative 'helper'
 #   end
 # end
 # puts check(555)
-def check(x)
-  a = obtain_hundreds(x)
-  b = obtain_decades(x)
-  c = obtain_units(x)
+def check(three_numbers)
+  a = obtain_hundreds(three_numbers)
+  b = obtain_decades(three_numbers)
+  c = obtain_units(three_numbers)
 
   if (a == 4) || (b == 4) || (c == 4) || (a == 7) || (b == 7) || (c == 7)
     puts 'цифры 4 или 7, входят'

@@ -12,28 +12,32 @@
 #   # print("Введите число: ")
 #   # a3 = gets.chomp()
 
-def average_number(a1, a2, a3)
-  # if a1.between?(a2, a3)
+def average_number(a1 = 1, a2 = 0, a3 = 10)
 
-  # end
+  if a1.between?(a2, a3)
 
-  puts if (a2 > a1) && (a1 > a3) || (a3 > a1) && (a1 > a2)
-  puts 'Среднее число первое a1'
-
-  puts if (a1 > a2) && (a2 > a3) || (a3 > a2) && (a2 > a1)
-  puts 'Среднее число второе a2'
-
-  puts if (a1 > a3) && (a3 > a2) || (a2 > a3) && (a3 > a1)
-  puts 'Среднее число третье a3'
-
-  puts if (a1 && a2) || (a1 && a3) || (a2 && a3)
-  puts 'Определить среднее число нельзя т.к. есть одинаковые цифры'
+    puts "yt d[jlbn"
+  end
 end
 
-def max
-end
 
-def min
-end
+#   puts if (a2 > a1) && (a1 > a3) || (a3 > a1) && (a1 > a2)
+#   puts 'Среднее число первое a1'
 
-puts "Среднее число: #{average_number(1, 2, 3)}"
+#   puts if (a1 > a2) && (a2 > a3) || (a3 > a2) && (a2 > a1)
+#   puts 'Среднее число второе a2'
+
+#   puts if (a1 > a3) && (a3 > a2) || (a2 > a3) && (a3 > a1)
+#   puts 'Среднее число третье a3'
+
+#   puts if (a1 && a2) || (a1 && a3) || (a2 && a3)
+#   puts 'Определить среднее число нельзя т.к. есть одинаковые цифры'
+# end
+
+# def max
+# end
+
+# def min
+# end
+
+# puts "Среднее число: #{average_number(1, 2, 3)}"

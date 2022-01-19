@@ -3,10 +3,10 @@
 
  require_relative 'helper'
 
-def check(x)
-  a = obtain_hundreds(x)
-  b = obtain_decades(x)
-  c = obtain_units(x)
+def check(three_numbers)
+  a = obtain_hundreds(three_numbers)
+  b = obtain_decades(three_numbers)
+  c = obtain_units(three_numbers)
 
   if (a == 3) || (b == 3) || (c == 3) || (a == 6) || (b == 6) || (c == 6) || (a == 9) || (b == 9) || (c == 9)
     puts 'цифры: 3, 6 или 9, входят'

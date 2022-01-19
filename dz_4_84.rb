@@ -11,14 +11,21 @@
 # print("Введите число 4: ")
 # d = gets.chomp()
 
-def number(a, b, c, d)
-  a % 3 && 0 if sum += a
+def number(number_a, number_b, number_c, number_d)
+  sum = 0
+  sum += number_a if number_a % 3.zero?
 
-  b % 3 && 0 if sum += b
+  sum += number_b if number_b % 3.zero?
 
-  c % 3 && 0 if sum += c
+  sum += number_c if number_c % 3.zero?
 
-  d % 3 && 0 if sum += d
+  sum += number_d if number_d % 3.zero?
+  sum
 end
+puts number(3, 3, 3, 2)
 
-puts number(2, 2, 2, 2)
+# if  a % 3 == 0
+# sum += a
+# end
+
+# sum += a if a % 3 == 0
