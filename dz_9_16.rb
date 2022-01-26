@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 print('Введите слово: ')
-a = gets.chomp.to_sym
-if a[0] == a[1]
+a = gets.chomp
+a.length
+if a[1] == a[3]
   puts 'одинаковы'
 else
   puts 'не одинаковы'

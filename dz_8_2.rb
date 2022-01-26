@@ -1,28 +1,21 @@
 # frozen_string_literal: true
 
-# step_goal = 5
-
-# for line_count in 1..step_goal
-#   space_goal = step_goal - line_count
-#   for char_count in 1..step_goal
-#     if char_count > space_goal
-#       putc '5'
-#       putc ''
-#     end
+# 5.times do |iteration|
+#   (iteration + 1).times do
+#     print '5 '
 #   end
-#   putc "\n"
+#   puts
 # end
 
-5.times do |iteration|
-  (iteration + 1).times do
-    print "5 "
-  end
-  puts
+def iteration(number)
+  1.upto(5).each { |x| puts ('5 ' * x).rjust(1) }
 end
+iteration 'number'
 
-# for j in 1..5 do
-#   for i in 1..5 do
-#       print i,  " "
-#   end
-# puts
-# end
+# rjust - Если параметр integer больше, чем длина строки str,
+# то метод возвращает новую строку длины integer со строкой str выравненной по правому краю,
+# а возникшее пустое место заполняется символами padstr; иначе,
+# возвращается строка str.
+
+# upto - Данный итератор проходит все значения между str и other_str включительно,
+# передавая их в блок в качестве параметра.

@@ -1,45 +1,35 @@
-# Даны три различных целых числа. Определить, какое из них (первое, второе
-#   или третье):
-#   а) самое большое;
-#   б) самое маленькое;
-#   в) является средним (средним назовем число, которое больше наименьшего из
-#   данных чисел, но меньше наибольшего).
+# frozen_string_literal: true
 
-#   # print("Введите число: ")
-#   # nomber = gets.chomp()
-#   # print("Введите число: ")
-#   # a2 = gets.chomp()
-#   # print("Введите число: ")
-#   # a3 = gets.chomp()
-
-def average_number(a1 = 1, a2 = 0, a3 = 10)
-
-  if a1.between?(a2, a3)
-
-    puts "yt d[jlbn"
-  elsif a2.between?(a1, a3)
-    puts
+def max_number(number1, number2, number3)
+  if number1 >= number2 && number1 >= number3
+    puts "Наибольшее число : #{number1}"
+  elsif number2 >= number3 && number2 >= number1
+    puts "Наибольшее число : #{number2}"
+  else
+    puts "Наибольшее число : #{number3}"
   end
 end
+puts max_number(400, 200, 300)
 
-
-#   puts if (a2 > a1) && (a1 > a3) || (a3 > a1) && (a1 > a2)
-#   puts 'Среднее число первое a1'
-
-#   puts if (a1 > a2) && (a2 > a3) || (a3 > a2) && (a2 > a1)
-#   puts 'Среднее число второе a2'
-
-#   puts if (a1 > a3) && (a3 > a2) || (a2 > a3) && (a3 > a1)
-#   puts 'Среднее число третье a3'
-
-#   puts if (a1 && a2) || (a1 && a3) || (a2 && a3)
-#   puts 'Определить среднее число нельзя т.к. есть одинаковые цифры'
+# def min_number(number1, number2, number3)
+#   if number1 <= number2 && number1 <= number3
+#     puts "Наименьшее число : #{number1}"
+#   elsif number2 <= number3 && number2 <= number1
+#     puts "Наименьшее число : #{number2}"
+#   else
+#     puts "Наименьшее число : #{number3}"
+#   end
 # end
-
-# def max
+# puts min_number(10, 5, 1)
+# def average_number(number1, number2, number3)
+#   if number1.between?(number2, number3)
+#     puts "Среднее число : #{number1}"
+#   elsif number2.between?(number1, number3)
+#     puts "Среднее число : #{number2}"
+#   elsif  number3.between?(number2, number1)
+#     puts "Среднее число : #{number3}"
+#   end
 # end
-
-# def min
-# end
+# puts average_number(151, 150, 200)
 
 # puts "Среднее число: #{average_number(1, 2, 3)}"

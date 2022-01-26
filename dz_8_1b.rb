@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
-4.times do
-  (1..10).each do |i|
-    print "#{i} "
+def draw_matrix(rows, columns)
+  rows.times do
+    (1..columns).each do |i|
+      print "#{i} "
+    end
+    puts
   end
-  puts
 end
+draw_matrix(4, 10)

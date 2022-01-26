@@ -1,30 +1,11 @@
 # frozen_string_literal: true
 
-step_goal = 5
-
-for line_count in 1..step_goal
-  space_goal = step_goal - line_count
-  for char_count in -1..step_goal
-    if char_count < space_goal
-      putc '1'
-      putc ''
-    end
-  end
-  putc "\n"
+def iteration(number)
+  5.downto(1).each { |number| puts ('1 ' * number).ljust(5) }
 end
+iteration 'number'
 
-
-
-# step_goal = 5
-
-# for line_count in 1..step_goal
-#   space_goal = step_goal - line_count
-#   for char_count in -1..step_goal
-#     if char_count < space_goal
-#       putc "1"
-#     else
-#       putc " "
-#     end
-#   end
-#   putc "\n"
-# end
+def iteration(number)
+  1.upto(5).each { |number| puts ('1' * number).rjust(1) }
+end
+iteration 'number'
