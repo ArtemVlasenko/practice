@@ -1,55 +1,80 @@
 # frozen_string_literal: true
 
+FIRST_EMPLOYEE_NUMBER = 1
+EMPLOYEE_COUNT = 12
+FIRST_MONTH = 1
+THIRD_MONTH = 3
+INDEX_DELTA = 1
 
-
-print('Введите зарпалату 1-ю работника за  месяц: ')
-month_one = gets.chomp.to_i
-print('Введите зарплату 2-ю работника за  месяц: ')
-month_two = gets.chomp.to_i
-print('Введите зарплату 3-ю работника за  месяц: ')
-month_three = gets.chomp.to_i
-
-
-(0..11).each do |x|
-  x += 1
-# puts "Зарплата 1 рабочего за год #{month_one} = #{worker_one}"
+def read_value(message)
+  print(message)
+  gets.chomp.to_i
 end
-puts "Зарплата 1-я, рабочего за квартал: #{month_one *3}"
 
-(0..11).each do |y|
-  y += 1
-# puts "Зарплата 1 рабочего за месяц #{month_two} = #{worker_two}"
+def main
+  table = []
+
+  FIRST_EMPLOYEE_NUMBER.upto(EMPLOYEE_COUNT).each do |employee_number|
+    index = employee_number - INDEX_DELTA
+    table[index] = [employee_number]
+    # table = [
+    #   [1]
+    # ]
+    FIRST_MONTH.upto(THIRD_MONTH).each do |month_number|
+      message = "Введите #{month_number}-ю зарплату #{employee_number}-го работника за месяц: "
+      salary = read_value(message)
+      # table[index] => [
+      #                   [1]
+      #                 ]
+      table[index] << salary
+      # table[index] => [
+      #   first iteration [1, salary_1]
+      #     second iteration => [1, salary_1, salary_2]
+      #       third iteration => [1, salary_1, salary_2, salary_3]
+      # ]
+    end
+  end
+
+  # After entering values
+  # table = [
+  #   [1, 2000, 3000, 2000],
+  #   [2, 2000, 3000, 2000],
+  #   [3, 2000, 3000, 2000]
+  # ]
+
+  puts table
+
+  # а) общую сумму, выплаченную за квартал всем работникам;
+  asd_1 = total_sum(table) # returns integer
+  # б) зарплату, полученную за квартал каждым работником;
+  # [
+    # employee, total
+  #   [1, 20000],
+  #   [2, 20000],
+  #   [3, 20000],
+  #   [4, 20000],
+  #   [5, 20000]
+  # ]
+  asd_2 = total_sum_by_quater_for_employee(table) # should return an array
+  # в) общую зарплату всех работников за каждый месяц.
+  # [
+      #month, total
+  #   [1, 10000],
+  #   [2, 10000],
+  #   [3, 10000]
+  # ]
+  asd_3 = total_sum_by_month_for_all_employees(table) # should return an array
+
+  # общую сумму, выплаченную за квартал всем работникам;
+  puts asd_1
+
+  # зарплату, полученную за квартал каждым работником;
+  # Нужно в цикле вывести
+  puts asd_2
+
+  # общую зарплату всех работников за каждый месяц.
+  # Нужно в цикле вывести
+  puts asd_3
 end
-puts "Зарплата 2-я, рабочего за квартал: #{month_two *3}"
 
-(0..11).each do |z|
-  z += 1
-# puts "Зарплата 1 рабочего за месяц #{month_three} = #{worker_three}"
-end
-puts "Зарплата 3-я, рабочего за квартал: #{month_three *3}"
-
-summa = month_one + month_two + month_three
-
-puts "общая зарплата всех работников за квартал #{summa}"
-# puts "общая суммa выплаченнaя за квартал всем работникам: #{summa * 3}"
-
-
-
-
-
-
-
-
-
-# for i  in [1..12]
-# s3 = s3 + i
-# puts "Зарплата 3 рабочего за квартал: #{s3}"
-# s = s1+s2+s3;
-# mes1=one[1]+two[1]+three[1]
-# mes2=one[2]+two[2]+three[2]
-# mes3=one[3]+two[3]+three[3]
-# puts "Общая сумма зарплат:  #{s}"
-# puts "Зарплата всех работников за 1 месяц: #{mes1}"
-# puts "Зарплата всех работников за 2 месяц: #{mes2}"
-# puts "Зарплата всех работников за 3 месяц:  #{mes3}"
-# end
+main
