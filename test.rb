@@ -1,5 +1,19 @@
 # frozen_string_literal: true
 
+NUMBER_MONTHS = {
+  1 => 'Январь',
+  2 => 'Февраль',
+  3 => 'Март',
+  4 => 'Апрель',
+  5 => 'Май',
+  6 => 'Июнь',
+  7 => 'Июнь',
+  8 => 'Август',
+  9 => 'Сентябрь',
+  10 => 'Октябрь',
+  11 => 'Ноябрь',
+  12 => 'Декабрь'
+}
 
 FIRST_EMPLOYEE_NUMBER = 1
 EMPLOYEE_COUNT = 2
@@ -40,6 +54,11 @@ def main
 
 
   # After entering values (После ввода значений)
+  row column
+  table.each do |row|
+    [1, 2000, 3000, 2000][1..3] => total_sum [2000, 3000, 2000].sum
+
+  end
   # table = [
   #   [1, 2000, 3000, 2000],
   #   [2, 2000, 3000, 2000],
@@ -49,16 +68,9 @@ def main
  puts table
 
   # а) общую сумму, выплаченную за квартал всем работникам;
-  # asd_1 = total_sum(table) # return integer
+  # asd_1 = total_sum(table) # returns integer
 
-  def total_sum(table)
-    return table.map { |i| i [1..3].sum }
-  end
-    sum_quarter = total_sum(table)
-
-
-
-
+  sum_quarter = total_sum(table)
 
   # б) зарплату, полученную за квартал каждым работником;
   # [
@@ -70,13 +82,8 @@ def main
   #   [5, 20000]
   # ]
   # asd_2 = total_sum_by_quater_for_employee(table) # should return an array
-  def total_sum_by_quater_for_employee(table)
 
-    return table.map { |i| i [1..3].sum }
-
-    # return table.each { |a| sum += a }
-  end
-    sum_month = total_sum_by_quater_for_employee(table)
+  sum_month = total_sum_by_quater_for_employee(table)
   # в) общую зарплату всех работников за каждый месяц.
   # [
       #month, total
@@ -91,9 +98,8 @@ def main
   #   end
   #   asd_3 = total_sum_by_month_for_all_employees(table)
 
-
   # общую сумму, выплаченную за квартал всем работникам;
-  puts  "Общая сумма выплаченная за квартал всем работникам = #{sum_quarter.sum}$"
+  puts  "Общая сумма выплаченная за квартал всем работникам = #{sum_quarter}$"
   # зарплату, получeнную за квартал каждым работником;
   # Нужно в цикле вывести
   puts "зарплата, полученная за квартал #{EMPLOYEE_COUNT}-м каждым работникaм = #{sum_month}"
@@ -101,6 +107,62 @@ def main
   # общую зарплату всех работников за каждый месяц.
   # Нужно в цикле вывести
   # puts "общая зарплата всех работников за каждый месяц = #{asd_3}"
+end
+
+def total_sum(table)
+  # total_sum = 0
+
+  # table.each do |row|
+  #   row[1..3].each do |salary|
+  #     total_sum += salary
+  #   end
+  # end
+
+  table.map { |row| row[1..3].sum }.sum
+
+  # table.map do |row|
+  #   row[1..3].sum
+  # end.sum
+end
+
+# В total_sum_by_quater_for_employee
+# В данный момент возвращает
+# => [10000, 20000, 30000]
+
+# А нужно что бы возарвщало
+# [
+#   [1, 7000], [2, 7000], [3, 7000]
+# ]
+def total_sum_by_quater_for_employee(table)
+
+  table.map do |i|
+    i [1..3].sum
+  end
+
+  # return table.each { |a| sum += a }
+end
+
+
+# На входе
+# table = [
+#   [1, 2000, 3000, 2000],
+#   [2, 2000, 3000, 2000],
+#   [3, 2000, 3000, 2000]
+# ]
+# table.transpose => [
+#  [0] [1,2,3],
+#  [1] [2000, 2000, 2000],
+#  [2] [3000, 3000, 3000],
+#  [3] [2000, 2000, 2000]
+# ]
+
+# На выходе
+# [
+#   ['Январь', 7000], ['Февраль', 7000], ['Март', 7000]
+# ]
+def total_sum_by_quater_for_employee(table)
+
+  # Implementation ...
 end
 
 main
