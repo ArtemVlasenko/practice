@@ -1,38 +1,106 @@
 # frozen_string_literal: true
 
 
-# print('Введите число для переменной n: ')
-#   n = gets.chomp. to_i
+FIRST_EMPLOYEE_NUMBER = 1
+EMPLOYEE_COUNT = 2
+FIRST_MONTH = 1
+THIRD_MONTH = 3
+INDEX_DELTA = 1
 
-# for number in 1..9
-
-#   puts "#{n} * #{number} = #{number * n }"
-# end
-
-
-# i = 0
-# loop do
-#   i = i + 2
-#   if i == 4
-#     next        # skip rest of the code in this iteration
-#   end
-#   puts i
-#   if i == 10
-#     break
-#   end
-# end
-
-# print('Введите свое имя: ')
-#    n = gets.chomp. to_i
-
-def average_number(number1, number2, number3)
-
-  if number1.between?(number2, number3)
-#     puts "Среднее число : #{number1}"
-#   elsif number2.between?(number1, number3)
-#     puts "Среднее число : #{number2}"
-#   else number3.between?(number2, number1)
-#     puts "Среднее число : #{number3}"
-  end
+def read_value(message)
+  print(message)
+  gets.chomp.to_i
 end
-puts "Среднее число: #{average_number(1, 2, 3)}"
+
+def main
+  table = []
+
+  FIRST_EMPLOYEE_NUMBER.upto(EMPLOYEE_COUNT).each do |employee_number|
+    index = employee_number - INDEX_DELTA
+    table[index] = [employee_number]
+    # table = [
+    #   [1]
+    # ]
+    FIRST_MONTH.upto(THIRD_MONTH).each do |month_number|
+      message = "Введите #{month_number}-ю зарплату #{employee_number}-го работника за месяц: "
+      salary = read_value(message)
+      # table[index] => [
+      #                   [1]
+      #                 ]
+      table[index] << salary
+
+      # table[index] => [
+      #   first iteration [1, salary_1]
+      #     second iteration => [1, salary_1, salary_2]
+      #       third iteration => [1, salary_1, salary_2, salary_3]
+      # ]
+    end
+  end
+
+
+
+  # After entering values (После ввода значений)
+  # table = [
+  #   [1, 2000, 3000, 2000],
+  #   [2, 2000, 3000, 2000],
+  #   [3, 2000, 3000, 2000]
+  # ]
+
+ puts table
+
+  # а) общую сумму, выплаченную за квартал всем работникам;
+  # asd_1 = total_sum(table) # return integer
+
+  def total_sum(table)
+    return table.map { |i| i [1..3].sum }
+  end
+    sum_quarter = total_sum(table)
+
+
+
+
+
+  # б) зарплату, полученную за квартал каждым работником;
+  # [
+    # employee, total
+  #   [1, 20000],
+  #   [2, 20000],
+  #   [3, 20000],
+  #   [4, 20000],
+  #   [5, 20000]
+  # ]
+  # asd_2 = total_sum_by_quater_for_employee(table) # should return an array
+  def total_sum_by_quater_for_employee(table)
+
+    return table.map { |i| i [1..3].sum }
+
+    # return table.each { |a| sum += a }
+  end
+    sum_month = total_sum_by_quater_for_employee(table)
+  # в) общую зарплату всех работников за каждый месяц.
+  # [
+      #month, total
+  #   [1, 10000],
+  #   [2, 10000],
+  #   [3, 10000]
+  # ]
+  # asd_3 = total_sum_by_month_for_all_employees(table) # should return an array
+  # def total_sum_by_month_for_all_employees(table)
+
+  #   return
+  #   end
+  #   asd_3 = total_sum_by_month_for_all_employees(table)
+
+
+  # общую сумму, выплаченную за квартал всем работникам;
+  puts  "Общая сумма выплаченная за квартал всем работникам = #{sum_quarter.sum}$"
+  # зарплату, получeнную за квартал каждым работником;
+  # Нужно в цикле вывести
+  puts "зарплата, полученная за квартал #{EMPLOYEE_COUNT}-м каждым работникaм = #{sum_month}"
+
+  # общую зарплату всех работников за каждый месяц.
+  # Нужно в цикле вывести
+  # puts "общая зарплата всех работников за каждый месяц = #{asd_3}"
+end
+
+main

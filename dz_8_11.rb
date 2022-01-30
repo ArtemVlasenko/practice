@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FIRST_EMPLOYEE_NUMBER = 1
-EMPLOYEE_COUNT = 12
+EMPLOYEE_COUNT = 1
 FIRST_MONTH = 1
 THIRD_MONTH = 3
 INDEX_DELTA = 1
@@ -42,7 +42,7 @@ def main
   #   [3, 2000, 3000, 2000]
   # ]
 
-  puts table
+  puts table[1]
 
   # а) общую сумму, выплаченную за квартал всем работникам;
   asd_1 = total_sum(table) # returns integer
