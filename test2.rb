@@ -51,51 +51,12 @@ def main
       # ]
     end
   end
-  def total_sum(table)
-     total_sum = 0
-
-  #   table.each do |row|
-  #     row[1..3].each do |salary|
-  #       total_sum += salary
-  #     end
-  #   end
-  # end
-  # table.map { |row| row[1..3].sum }.sum
-
-    table.map do |row|
-      row[1..3].sum
-    end.sum
-   end
-
-  def total_sum_by_quater_for_employee(table)
-    total_sum_by_quater_for_employee = 0
-
-    table.map { |row| [row[0], row[1..3].sum] }
-  end
-
-
-
-  def total_sum_by_month_for_all_employees(table)
-    total_sum_by_month_for_all_employees = 0
-    table.transpose.each_with_index do |row, index|
-      next if index == 0
-      [
-       NUMBER_MONTHS[index],
-       row.sum
-      ]
-puts row
-  end
-  end
-
-
   # After entering values
   # table = [
   #   [1, 2000, 3000, 2000],
   #   [2, 2000, 3000, 2000],
   #   [3, 2000, 3000, 2000]
   # ]
-
-
 
   # а) общую сумму, выплаченную за квартал всем работникам;
   # asd_1 = total_sum(table) # returns integer
@@ -123,13 +84,39 @@ puts row
 
   # зарплату, полученную за квартал каждым работником;
   # Нужно в цикле вывести
-    a = total_sum_by_quater_for_employee(table)
-    a.each do |x|
-      puts " зарплата, полученная за квартал  работником № #{x[0]} = #{x[1]}"
-    end
+  a = total_sum_by_quater_for_employee(table)
+  a.each do |x|
+    puts " зарплата, полученная за квартал  работником № #{x[0]} = #{x[1]}"
+  end
 
   # общую зарплату всех работников за каждый месяц.
   # Нужно в цикле вывести
-    puts total_sum_by_month_for_all_employees(table)
+  puts total_sum_by_month_for_all_employees(table)
 end
+
+def total_sum(table)
+  total_sum = 0
+
+  table.map do |row|
+    row[1..3].sum
+  end.sum
+end
+
+def total_sum_by_quater_for_employee(table)
+  total_sum_by_quater_for_employee = 0
+
+  table.map { |row| [row[0], row[1..3].sum] }
+end
+
+def total_sum_by_month_for_all_employees(table)
+  total_sum_by_month_for_all_employees = 0
+  table.transpose.each_with_index do |row, index|
+    next if index == 0
+    [
+      NUMBER_MONTHS[index],
+      row.sum
+    ]
+  end
+end
+
 main
