@@ -139,7 +139,7 @@ def total_sum_by_quater_for_employee(table)
     i [1..3].sum
   end
 
-  # return table.each { |a| sum += a }
+
 end
 
 
