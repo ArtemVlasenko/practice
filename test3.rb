@@ -1,24 +1,19 @@
+require 'pry'
 
+table = [
+  ["1", "5", "2", "3"]
+]
 
- table = [["1", "5", "2", "3"]]
+def total_sum(table)
+  total_sum = 0
+  sub_array = 0
 
-  def total_sum(table)
-      total_sum = 0
-
-
-sub_array = 0
-
-table.map do |sub_array| sub_array
-  sub_array.flatten
-  sub_array[1..3].map {|x| x }
-  #  sub_array.inject{ |result, elem| result + elem }
-
-    end
-
-
-
-
-
+  table.map do |sub_array|
+    # sub_array.flatten
+    binding.pry
+    sub_array[1..3].map {|x| x }
+    sub_array.inject{ |result, elem| result + elem }
+  end
 end
 
 
@@ -28,7 +23,7 @@ end
 
 
 # puts total_sum(table)
-print total_sum(table)
+puts total_sum(table)
 
 # def test(table)
 #   test = 0

@@ -11,26 +11,37 @@ FILE_PATH = 'dz_8_12.csv'
 
 def main
   table = read_data(FILE_PATH)
-  binding.pry
   a = test(table)
-  a.each_char
 end
 
-table = []
 def test(table)
   # [
   #   [1,5],
   #   [1,4],
   # ]
-  # item = 0
-  # sub_array = 0
-  # table.map  {|sub_array|  sub_array[1..3] }
-  #   sub_array.each do |item| item.to_i
-  #
+
+  # binding.pry
+  new_table = table.map do |row|
+    row.map do |item|
+      item.to_f
+    end
+  end
+
+  # new_table = table.map do |row|
+  #   [row[0]] + row[1..3].map do |el|
+  #     el.to_f
   #   end
   # end
+  # new_table.map { |row| [row[0], row[1..3].sum]  }
+  # new_table.map do |row|
+  #   sum = 0
+  #   [
+  #     row[0],
+  #     row[1..3].each { |el| sum+=el }
+  #   ]
+  # end
+  # table.map { |row| [row[0],  row[1..3].map(&:to_f).sum ]  }
+
 end
-# table.map{ |arr| arr[1..3].map{ |v| v.to_f } }
-puts test(table)
 
 main
