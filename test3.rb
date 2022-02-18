@@ -1,47 +1,43 @@
 
-NUMBER_MONTHS = {
-  1 => 'Январь',
-  2 => 'Февраль',
-  3 => 'Март',
-  4 => 'Апрель',
-  5 => 'Май',
-  6 => 'Июнь',
-  7 => 'Июнь',
-  8 => 'Август',
-  9 => 'Сентябрь',
-  10 => 'Октябрь',
-  11 => 'Ноябрь',
-  12 => 'Декабрь'
-}
+
+ table = [["1", "5", "2", "3"]]
+
+  def total_sum(table)
+      total_sum = 0
+
+
+sub_array = 0
+
+table.map do |sub_array| sub_array
+  sub_array.flatten
+  sub_array[1..3].map {|x| x }
+  #  sub_array.inject{ |result, elem| result + elem }
+
+    end
 
 
 
 
-names = [[10, 10, 10], [20, 20, 20]]
-
-names.each_with_index do |row, index|
-  next if index == 0
-[
-  NUMBER_MONTHS[index],
-  row.sum
-]
 
 end
-puts names
 
 
-# table = [[10, 10, 10], [20, 20, 20]]
-# def total_sum_by_month_for_all_employees(table)
-#   total_sum_by_month_for_all_employees = 0
-#   table.transpose.each_wich_index do |row, index|
-#     next if index == 0
 
-#     table.map { |row| [row[0], row[1..3].sum] }
-#     [
-#      NUMBER_MONTHS[index],
-#      row.sum
-#     ]
 
+  # puts " зарплата, полученная за квартал  работником № #{x}"
+
+
+# puts total_sum(table)
+print total_sum(table)
+
+# def test(table)
+#   test = 0
+#   table.map do |sub_array|
+#     sub_array[1..3]
+#      sub_array.map  {|x| x.to_i}
 #   end
+#      x = test(table)
+#      x.map.select {|num| num == 1 }
 
-# puts total_sum_by_month_for_all_employees(table)
+# end
+# puts test(table)

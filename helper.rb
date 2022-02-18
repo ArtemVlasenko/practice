@@ -21,7 +21,7 @@ def generate_test_data(rows, columns)
 end
 
 def random_number
-  rand(0.5...10.0)
+  rand(1...5)
 end
 
 def save_to_file(data, file_path)
