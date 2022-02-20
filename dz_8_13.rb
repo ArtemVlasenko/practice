@@ -11,20 +11,25 @@ FILE_PATH = 'dz_8_13.csv'
 
 def main
   table = read_data(FILE_PATH)
-  binding.pry
   a = test(table)
-  a.each
+binding.pry
 end
 
-table = []
+
 def test(table)
-  test = 0
-  table.map do |sub_array|
-    sub_array[1..3]
-     sub_array.map  {|x| x.to_i}
-     x = test(table)
-  #    x.select {|num| num == 1 }
+  # test(table) = 0
+  new_table = table.map { |row| [row[0],  row[1..3].map(&:to_f)]  }
+
+  new_table[1..3].chars.each do |char|
+    if 5 == char
+      counter += 1
+    end
+
+
+  # new_table.each do |i| i.select {|g| g == 5}
+  #   puts " зарплата, полученная за квартал  работником № #{i[0]} =  #{i} "
   # end
 end
+
 puts test(table)
 main

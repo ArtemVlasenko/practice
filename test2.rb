@@ -91,7 +91,10 @@ def main
 
   # общую зарплату всех работников за каждый месяц.
   # Нужно в цикле вывести
-  puts total_sum_by_month_for_all_employees(table)
+y = total_sum_by_month_for_all_employees(table)
+y.each do |index|
+  puts "общую зарплату всех работников за каждый месяц № #{index[1]} = "
+end
 end
 
 def total_sum(table)
@@ -100,6 +103,7 @@ def total_sum(table)
   table.map do |row|
     row[1..3].sum
   end.sum
+
 end
 
 def total_sum_by_quater_for_employee(table)
