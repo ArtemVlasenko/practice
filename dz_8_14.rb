@@ -1,7 +1,7 @@
 require_relative 'helper'
 require 'pry'
 
-FILE_PATH = 'dz_8_13.csv'
+FILE_PATH = 'dz_8_14.csv'
 
 # Create file with test data
 # save_to_file(

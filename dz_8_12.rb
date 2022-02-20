@@ -1,7 +1,6 @@
 require_relative 'helper'
 require 'pry'
 
-
 FILE_PATH = 'dz_8_12.csv'
 
 # Create file with test data
@@ -10,31 +9,49 @@ FILE_PATH = 'dz_8_12.csv'
 #   FILE_PATH
 # )
 
+first_discipline_sum = 0
+second_discipline_sum = 0
+third_discipline_sum = 0
+
+[
+  [1 ,2, 3, 6],
+  [2 ,4, 5, 6]
+].each do |row|
+  first_discipline_sum += row[1]
+  second_discipline_sum += row[2]
+  third_discipline_sum += row[3]
+end
+
 def main
   table = read_data(FILE_PATH)
-  a = test(table)
+  avg_points_for_participants = avg_points_by_participant(table)
+  print_avg_participants(avg_points_for_participants)
+  avg_for_programms = avg_by_programm(table)
+  print_avg_programms(avg_for_programms)
 end
 
-def test_one(table)
-  new_table_one = test_one.map { |row| [row[0], row[1..3].map(&:to_f).sum / 3] }
+def avg_points_by_participant(table)
+  table.map { |row| [row[0], row[1..3].map(&:to_f).sum / 3] }
+end
 
-  new_table_one.each do |x|
-    puts " зарплата, полученная за квартал  работником № #{x[0]} = #{x[1]}"
+def avg_by_programm(table)
+  array = table.transpose
+  array.each_with_index.map do |row, index|
+    [index, row.map(&:to_f).sum / row.size]
+  end[1..3]
+end
+
+def print_avg_participants(avg_points_for_participants)
+  avg_points_for_participants.each do |avg_points_for_participant|
+    puts "Среднее количесво балов для учасника #{avg_points_for_participant[0]} = #{avg_points_for_participant[1]}"
   end
 end
 
-def test(table)
-# binding.pry
-  new_table = table.map { |row| [row[0], row[1..3].map(&:to_f)] }
-
-  new_table.each_with_index do |row_one, index|
-    next if index == 0
-
-    puts " зарплата, полученная за квартал  работником № #{index} = #{row_one[1..3]} "
+def print_avg_programms(avg_for_programms)
+  avg_for_programms.each do |avg_for_programm|
+    puts "Среднее количесво балов для программы #{avg_for_programm[0]} = #{avg_for_programm[1]}"
   end
 end
-
-
 
 main
 
