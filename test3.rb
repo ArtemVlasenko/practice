@@ -19,13 +19,15 @@ def total_sum(table)
 
   new_table = table.map { |row| [row[0],  row[1..3].map(&:to_i)] }
 
-  new_table.each do |i| i
-  puts " зарплата, полученная за квартал  работником № #{i[0]} =  #{i.select {|g|g == 5}} "
-end
+  new_table.map { |row| [row[0],  row[1..3].select |i| i > 2]}
+
+puts " количество студентов, сдавших сессию без двоек  = #{row[0]}"
+
+
 end
 
 
-  puts total_sum(table)
+   total_sum(table)
 
 
 
@@ -47,3 +49,9 @@ end
 
 # end
 # puts test(table)
+
+# table = [["1", "1", "3", "2"],
+#     ["2", "5", "1", "4"],
+#     ["3", "4", "5", "1"],
+#     ["4", "3", "1", "3"],
+#     ["5", "2", "4", "2"]]

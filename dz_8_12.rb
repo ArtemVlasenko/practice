@@ -9,23 +9,24 @@ FILE_PATH = 'dz_8_12.csv'
 #   FILE_PATH
 # )
 
-first_discipline_sum = 0
-second_discipline_sum = 0
-third_discipline_sum = 0
+# first_discipline_sum = 0
+# second_discipline_sum = 0
+# third_discipline_sum = 0
 
-[
-  [1 ,2, 3, 6],
-  [2 ,4, 5, 6]
-].each do |row|
-  first_discipline_sum += row[1]
-  second_discipline_sum += row[2]
-  third_discipline_sum += row[3]
-end
+# [
+#   [1 ,2, 3, 6],
+#   [2 ,4, 5, 6]
+# ].each do |row|
+#   first_discipline_sum += row[1]
+#   second_discipline_sum += row[2]
+#   third_discipline_sum += row[3]
+# end
 
 def main
   table = read_data(FILE_PATH)
   avg_points_for_participants = avg_points_by_participant(table)
   print_avg_participants(avg_points_for_participants)
+
   avg_for_programms = avg_by_programm(table)
   print_avg_programms(avg_for_programms)
 end

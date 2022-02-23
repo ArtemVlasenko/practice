@@ -42,7 +42,7 @@ def main
   #   [3, 2000, 3000, 2000]
   # ]
 
-  puts table[1]
+  puts table
 
   # а) общую сумму, выплаченную за квартал всем работникам;
   asd_1 = total_sum(table) # returns integer
