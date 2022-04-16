@@ -48,7 +48,7 @@ end
 def the_number_of_twos_in_each_subject(table)
   array = table.transpose
   array.each_with_index.map do |row, index|
-    [index, row.map(&:to_i).select { |number| number == 2 }.size ]
+    [index, row.map(&:to_i).select { |number| number > 2 }.size ]
   end[1..3]
 end
 
