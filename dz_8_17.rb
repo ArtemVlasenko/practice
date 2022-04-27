@@ -37,13 +37,20 @@ end
 
 #  для каждого работника — в какой из месяцев он получил наибольшую зарплату
 def highest_salary(table)
-  table.map { |row| [row[0], row[1..3].each_with_index.collect {|number, number_two| NUMBER_MONTH[number_two + 1]  if number  == row[1..3].max }.compact] }
+  table.map do |row|
+    [
+      row[0],
+      row[1..3].each_with_index.collect do |number, number_two|
+        NUMBER_MONTH[number_two + 1] if number  == row[1..3].max
+      end.compact
+    ]
+  end
 end
 
 
 def print_highest_salary(which_months_she_received_highest_salary)
   which_months_she_received_highest_salary.each do |which_months_she_received_highest_salarys|
-    puts "для каждого работника: #{which_months_she_received_highest_salarys[0]} = #{which_months_she_received_highest_salarys[1]}"
+    puts "для каждого работника: #{which_months_she_received_highest_salarys[0]} = #{which_months_she_received_highest_salarys[1].join(', ')}"
   end
 end
 
@@ -51,14 +58,18 @@ end
 
 def max_salary_month(table)
   array = table.transpose[1..3]
-  array.each_with_index.map do |row, index|
-    [index + 1, row.map(&:to_i).max]
+  result = array.each_with_index.map do |row, index|
+    [
+      index + 1,
+      row.index(row.map(&:to_i).max.to_s) + 1,
+      row.map(&:to_i).max
+    ]
   end
 end
 
 def print_max_salary(which_employee_received_highest_salary_month)
   which_employee_received_highest_salary_month.each do |highest_salary_month|
-    puts " кто из работников получил наибольшую зарплату за этот месяц: #{highest_salary_month[0]} = #{highest_salary_month[1]}"
+    puts " кто из работников получил наибольшую зарплату за этот месяц: #{highest_salary_month[0]} for employee #{highest_salary_month[1]} is #{highest_salary_month[2]}"
   end
 end
 

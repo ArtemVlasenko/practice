@@ -13,16 +13,15 @@ def main
 #    binding.pry
   table = read_data(FILE_PATH)
 
-  number_of_students_by_session_without_twos = the_number_of_students_by_session_without_twos(table)
-  print_the_number_of_students_by_session_without_twos = number_of_students_by_session_without_twos
-  puts print_the_number_of_students_by_session_without_twos.to_s
+  number_of_students_by_session_without_twos = highest_mark(table)
+  print_highest_mark = number_of_students_by_session_without_twos
+  puts "Highest mark: #{print_highest_mark.to_s}"
 
   winner_number, winner_score = how_many_points_did_the_winner_get(table)
-  print_the_how_many_points_did_the_winner_get = winner_number, winner_score
   puts "Participant with number #{winner_number} has score #{winner_score}"
 end
 
-def the_number_of_students_by_session_without_twos(table)
+def highest_mark(table)
   array = table.map { |row| [row[0], row[1..5].map(&:to_i)] }
   new_array = array.map do |row|
     row[1].max

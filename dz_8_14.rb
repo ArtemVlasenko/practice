@@ -16,8 +16,7 @@ def main
   students_without_twos = students_session_success.count(true)
   puts "количество студентов, сдавших сессию без двоек  #{students_without_twos}"
 
-  number_by_subjects_which_only_grades_5_and_4_were_received = number_of_subjects_which_only_grades_5_and_4_were_received(table)
-  print_number_of_subjects_which_only_grades_5_and_4_were_received = number_by_subjects_which_only_grades_5_and_4_were_received.count
+  print_number_of_subjects_which_only_grades_5_and_4_were_received = number_of_subjects_which_only_grades_5_and_4_were_received(table)
   puts "количество предметов, по которым были получены только оценки 5 и 4 = #{print_number_of_subjects_which_only_grades_5_and_4_were_received}"
 
   number_of_twos_in_each_subject = the_number_of_twos_in_each_subject(table)
@@ -38,9 +37,10 @@ def number_of_subjects_which_only_grades_5_and_4_were_received(table)
   array = array.transpose
   array = array[1].transpose
   new_array = array.map do |row|
-    row.select { |elem, number| number = (4..5).include?(elem) }.sum
+    (row - [4,5]).size.zero?
   end
-  # TODO: Add implementation here
+
+  new_array.select { |el| el }.count
 end
 
 # количество двоек по каждому предмету

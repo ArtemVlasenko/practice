@@ -47,7 +47,14 @@ end
 
 # порядковый номер работника, получившего за квартал набольшую сумму
 def serial_number_employee_who_received_largest_amount_for_quarter(table)
-  table.map { |row| [row[0], row[1..3].map(&:to_i).sum].max { |a, b| a[1] <=> b[1] }[1] }
+  b = table.map do |row|
+    a = [
+      row[0],
+      row[1..3].map(&:to_i).sum
+    ]
+  end.max do |a, b|
+    a[1] <=> b[1]
+  end[0]
 end
 
 
