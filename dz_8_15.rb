@@ -4,22 +4,37 @@ require 'pry'
 FILE_PATH = 'dz_8_15.csv'
 
 # Create file with test data
-save_to_file(
-  generate_test_data(15,3),
-  FILE_PATH
-)
+# save_to_file(
+#   generate_test_data(8,5),
+#   FILE_PATH
+# )
 
-  def main
+def main
 #    binding.pry
-     table = read_data(FILE_PATH)
+  table = read_data(FILE_PATH)
 
-# #   #  puts "Общее количество пятерок в таблице = #{number_of_fives_by_table(table)}"
+  number_of_students_by_session_without_twos = the_number_of_students_by_session_without_twos(table)
+  print_the_number_of_students_by_session_without_twos = number_of_students_by_session_without_twos
+  puts print_the_number_of_students_by_session_without_twos.to_s
 
-# #   # number_of_triplets_for_each_student = number_of_triplets_by_each_student(table)
-# #   # print_number_of_triplets_for_each_students(number_of_triplets_for_each_student)
+  winner_number, winner_score = how_many_points_did_the_winner_get(table)
+  print_the_how_many_points_did_the_winner_get = winner_number, winner_score
+  puts "Participant with number #{winner_number} has score #{winner_score}"
+end
 
-# #   # number_of_twos_in_each_subject = the_number_of_twos_in_each_subject(table)
-# #   # print_number_of_twos_in_each_subject(number_of_twos_in_each_subject)
+def the_number_of_students_by_session_without_twos(table)
+  array = table.map { |row| [row[0], row[1..5].map(&:to_i)] }
+  new_array = array.map do |row|
+    row[1].max
+  end
+  new_array.max
+end
 
+def how_many_points_did_the_winner_get(table)
+  array = table.map { |row| [row[0], row[1..5].map(&:to_i)] }
+  array.map do |row|
+    [row[0], row[1].sum]
+  end.max { |a, b| a[1] <=> b[1] }
+end
 
- end
+main
