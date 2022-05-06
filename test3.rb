@@ -17,8 +17,8 @@
 
 table = [["1", "1", "3", "2"],
          ["2", "3", "1", "4"],
-         ["3", "4", "5", "1"],
-         ["4", "3", "1", "3"],
+         ["3", "4", "5", "2"],
+         ["4", "3", "2", "3"],
          ["5", "10", "15", "2"],
          ["6", "3", "11", "3"]]
 
@@ -26,10 +26,15 @@ table = [["1", "1", "3", "2"],
 # 8.16
 # порядковый номер работника, получившего за квартал набольшую сумму
 def maximum_salary_from_those_indicated_in_table(table)
-  array = table.map { |row| [row[0], row[1..3].map(&:to_i)] }
-  array = array.transpose
+  array = table.transpose[1..3]
+  result = array.each_with_index.map do |row, index|
+  [
+    index +1,
+    row.map(&:to_i).max,
+    row.index(row.map(&:to_i).max.to_s) + 1,
 
-
+  ]
+  end.max { |a, b| a[1] <=> b[1] }
 end
 puts "#{maximum_salary_from_those_indicated_in_table(table)}"
 
