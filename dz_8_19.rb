@@ -3,6 +3,13 @@ require 'pry'
 
 FILE_PATH = 'dz_8_19.csv'
 
+MAP_NUMBER_TO_CLASS_LETTER = {
+  1 => 'A',
+  2 => 'B',
+  3 => 'C',
+  4 => 'D'
+}
+
 # Create file with test data
 # save_to_file(
 #   generate_test_data(11, 4),
@@ -42,7 +49,7 @@ end
 
 def print_minimum_value_among_classes(the_minimum_value_among_classes)
   the_minimum_value_among_classes.each do |number|
-    puts "минимальное значение среди классов: #{number[0]} = #{number[1]}"
+    puts "минимальное значение среди классов: #{MAP_NUMBER_TO_CLASS_LETTER[number[0]]} = #{number[1]}"
   end
 end
 

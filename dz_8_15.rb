@@ -10,7 +10,6 @@ FILE_PATH = 'dz_8_15.csv'
 # )
 
 def main
-#    binding.pry
   table = read_data(FILE_PATH)
 
   number_of_students_by_session_without_twos = highest_mark(table)

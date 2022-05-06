@@ -37,9 +37,16 @@ def number_of_subjects_which_only_grades_5_and_4_were_received(table)
   array = table.map { |row| [row[0], row[1..3].map(&:to_i)] }
   array = array.transpose
   array = array[1].transpose
-  new_array = array.map do |row| row
+  new_array = array.map do |row|
+    count = 0
+    row.each do |element|
+      next if element != 4 || element != 5
+      count += 1
+    end
+    count == row.size
 
-  end.count(4,5)
+    row.all? { |element| [4, 5].include?(element) }
+  end
   # new_array = array.map do |row|
   #   .select { |elem, number| number = (4..5).include?(elem) }.sum
 
