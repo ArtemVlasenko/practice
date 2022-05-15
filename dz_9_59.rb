@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-def how_many_letters
-  word = 'Oodessa'
-  words = word.count('Oo')
-  puts words.to_s
+def how_many_letters(word)
+  puts word.count('Oo')
 end
-how_many_letters
+
+word = 'odessa odessa Odessa'
+how_many_letters(word)

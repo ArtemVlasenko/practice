@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
-def number_of_words
-  word = 'glory to  Ukraine'
+# TODO: Redo
+# When you count words, do not count "-"
+
+def number_of_words(word)
   words = word.split.size
   puts words.to_s
 end
-number_of_words
+
+puts number_of_words(' glory to - Ukraine ')

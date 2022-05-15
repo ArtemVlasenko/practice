@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
-def print_column
-  word = "chelsea".split("")
-  puts word
+def print_column(word)
+  chars = "chelsea".split("")
+  chars.each do |char|
+    puts char
+  end
 end
-print_column
+word = "chelsea"
+print_column(word)
