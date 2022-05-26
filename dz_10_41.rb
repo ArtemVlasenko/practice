@@ -4,11 +4,7 @@
 # числа n.
 
 def factorial(num)
-	if num == 1
-		return 1
-	else
-		return num * factorial(num-1)
-	end
+	num == 1 ? 1 : num * factorial(num-1)
 end
 
 print "Enter number: "

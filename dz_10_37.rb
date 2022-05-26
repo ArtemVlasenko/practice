@@ -5,16 +5,6 @@
 # 1) не используя процедуру, разработанную в задаче 10.35;
 # 2) с использованием процедуры, разработанной в задаче 10.35
 
-def proc_from
-  Proc.new
-end
-
-proc = proc_from {|n|  puts n * 10}
-proc.call("*")
-proc.call("*")
-proc.call("*")
-proc.call("*")
-
 def draw_matrix(rows, columns, value)
   rows.times do |row|
     draw_row(columns, value)

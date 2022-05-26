@@ -7,10 +7,12 @@
 # (начальные и конечные пробелы и символ "-" в предложении отсутствуют).
 # Определить количество слов в предложении.
 
-def number_of_offers(word)
-  word.split('.').each_with_index do |string, index|
-    puts "В #{index + 1} предложении #{string.split(' ').count} слов(а)."
+def number_of_offers(text)
+  text.split('.').each_with_index do |sentece, index|
+    words_count = sentence.split(' ').count
+    sentence_number = index + 1
+    puts "В #{sentence_number} предложении #{words_count} слов(а)."
   end
 end
-word = 'glory to Ukraine, putin fucked up. Second sentence'
-number_of_offers(word)
+text = 'glory to Ukraine, putin fucked up. Second sentence'
+number_of_offers(text)

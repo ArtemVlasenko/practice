@@ -5,9 +5,17 @@
 # TODO: Redo
 # works incorrectlly
 
-def number_of_offers(word)
-  word.squeeze('.!?')
-  puts word.count('.!?').to_s
+def number_of_offers(text)
+  text = text.squeeze('.!?')
+  puts text.split(/[.!?]/).count.to_s
 end
-word = 'Біси дохнуть, сонце сходить. Ця земля воїнів родить. Хай сміливих смерть обходить. Гуляй, дике поле!'
-number_of_offers(word)
+
+text = <<~TEXT
+  Біси дохнуть, сонце сходить???
+  Ця земля воїнів родить...
+  Хай сміливих смерть обходить.
+  Гуляй, дике поле!!!
+  Sentence
+TEXT
+
+number_of_offers(text)
