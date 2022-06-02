@@ -5,20 +5,20 @@
 # б) уменьшить на число А;
 # в) разделить на первый элемент.
 
-def mas(elem)
-  elem.each { |n| puts n * 2 }
-end
-mas([1, 2, 3, 4, 5, 10])
+require 'pry'
 
-def mas(elem)
-  a = 1
-  elem.each { |n| puts n * 2 - a }
+def increase_array(array)
+  array.map { |n| n * 2 }
 end
-mas([1, 2, 3, 4, 5, 10])
+puts "Task 1 -> input: #{[1, 2, 3, 4, 5, 10]}  output: #{increase_array([1, 2, 3, 4, 5, 10])}"
 
-def mas(elem)
-  arrs = elem[0]
-  elem.each { |n| puts n / arrs.to_f }
+def decrise_array(array, number)
+  array.map { |el| el - number }
+end
+puts "Task 2: input: #{[1, 2, 3, 4, 5, 10]} output: #{decrise_array([1, 2, 3, 4, 5, 10], 2)}, A: #{2}"
+
+def divide_array(array)
+  array.map { |el| el / array[0].to_f }
 end
 elem = [2, 2, 3, 4, 5, 10]
-mas(elem)
+puts "Task 3: input: #{elem} output: #{divide_array(elem)}"
