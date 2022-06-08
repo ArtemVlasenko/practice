@@ -7,14 +7,22 @@ GROWTH_RECORDED =  [1, 2, 2, 3, 4, 3, 4]
 
 # # [179, 180, 181, 182, 183, 184, 185, 186, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 200, 179, 180, 180, 179, 180]
 
+# mean_value = [
+#   179, 180, 181, 182, 183, 184, 185, 186, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 200, 179, 180, 180, 179, 180
+# ].sum.to_f / array.size
 
-def replace_values_ten_with_zero(array)
-m =0
-j = array.inject(0.0) { |result, i| result + i}  / array.size
+# [
+#   179, 180, 181, 182, 183, 184, 185, 186, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 200, 179, 180, 180, 179, 180
+# ].select { |el| el > mean_value }
 
+array = [179, 180, 181, 182, 183, 184, 185, 186, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 200, 179, 180, 180, 179, 180]
+mean = array.sum(0.0) / array.size
+puts array.select { |el| el > mean }
 
-
-end
+# def replace_values_ten_with_zero(array)
+#   m =0
+#   j = array.inject(0.0) { |result, el| result + el}  / array.size
+# end
 
   #  row.map(&:to_f)
 
@@ -22,8 +30,8 @@ end
 #   [index ,
 #   row.sum.fdiv(array.size)]
 
-end
-puts " #{replace_values_ten_with_zero(GROWTH_RECORDED)}"
+# end
+# puts " #{replace_values_ten_with_zero(GROWTH_RECORDED)}"
 # .map {|h| h > array }.size
 # def main
 #   table = [[1, 2, 2, 3, 4, 3, 4]]

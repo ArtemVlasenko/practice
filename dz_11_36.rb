@@ -4,11 +4,10 @@
 # а) все неотрицательные элементы;
 # б) все элементы, не превышающие число 100.
 
-def type_all_non_negative_elements(array)
+def print_all_non_negative_elements(array)
   array.select(&:positive?)
-  # array.select{ |el| el >= 0 }
 end
-puts "Task 1 -> input: #{[1, -2, 3, 4, 5, -10]}  output: #{type_all_non_negative_elements([1, -2, 3, 4, 5, -10])}"
+puts "Task 1 -> input: #{[1, -2, 3, 4, 5, -10]}  output: #{print_all_non_negative_elements([1, -2, 3, 4, 5, -10])}"
 
 def print_elements_up_to_100(array)
   array.select { |el| el < 100 }
