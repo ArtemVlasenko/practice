@@ -21,6 +21,13 @@ puts "Task 1 -> input: #{[10, 20, 3, 4, 5, 10, 21]}  output: #{replace_values_ev
 # TODO: переделать
 def odd_double_and_even_halve(array)
   array.map { |x| x.even? ? x / 2 : x * 2 }
+  # array.map do |x|
+  #   if x.even?
+  #     x / 2
+  #   else
+  #     x * 2
+  #   end
+  # end
 end
 odd_double_and_even_halve([100, 45, 99, 120, 1000, 50])
 puts "Task 2 -> input: #{[100, 45, 99, 120,1000, 50]} output: #{odd_double_and_even_halve([100, 45, 99, 120, 1000, 50]) }"
