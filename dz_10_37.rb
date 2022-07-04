@@ -5,33 +5,33 @@
 # 1) не используя процедуру, разработанную в задаче 10.35;
 # 2) с использованием процедуры, разработанной в задаче 10.35
 
-def draw_rectangle(height, width)
-	if (height <= 2 || width <= 2)
-	# When height and width less than three
-		return
-	end
-	print("\nHeight : ", height ," Width : ", width ,"\n\n")
-	row = 0
-	column = 0
-	while (row < height)
-		# This Loop controlling the width of rectangle
-		column = 0
-		while (column < width)
-			# When anyone is a valid
-			# This condition is display outer layer of rectangle
-			if (row == 0 || row == height - 1 || column == 0 || column == width - 1)
-				print("* ")
-			else
-				# include 2 spaces
-				print("  ")
-			end
-			column += 1
-		end
-		# include new line
-		print("\n")
-		row += 1
-	end
-end
+# def draw_rectangle(height, width)
+# 	if (height <= 2 || width <= 2)
+# 	# When height and width less than three
+# 		return
+# 	end
+# 	print("\nHeight : ", height ," Width : ", width ,"\n\n")
+# 	row = 0
+# 	column = 0
+# 	while (row < height)
+# 		# This Loop controlling the width of rectangle
+# 		column = 0
+# 		while (column < width)
+# 			# When anyone is a valid
+# 			# This condition is display outer layer of rectangle
+# 			if (row == 0 || row == height - 1 || column == 0 || column == width - 1)
+# 				print("* ")
+# 			else
+# 				# include 2 spaces
+# 				print("  ")
+# 			end
+# 			column += 1
+# 		end
+# 		# include new line
+# 		print("\n")
+# 		row += 1
+# 	end
+# end
 
 LINE_SYMBOL = '* '
 EMPTY_LINE_SYMBOL = '  '
@@ -68,10 +68,10 @@ def draw_rect(height:, width:)
 end
 
 def main()
-	draw_rectangle(6, 6)
-	draw_rectangle(7, 9)
-	draw_rectangle(3, 7)
+	# draw_rectangle(6, 6)
+	# draw_rectangle(7, 9)
+	# draw_rectangle(3, 7)
 	draw_rect(height: 10, width: 15)
 end
 
-main()
+ main()

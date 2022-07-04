@@ -48,11 +48,52 @@
 
 # puts "#{in_what_month_was_total_salary_of_all_employees_highest(table)}"
 # {|index, b| index <=> b  }
-class Animal
-  def say(word1, word2 = 'default value', hash = {})
-    puts word1
-    puts hash.inspect
+# def draw_matrix(rows, columns, value)
+#   rows.times do |row|
+#     draw_row(columns, value)
+#     puts
+#   end
+# end
+
+# def square(n)
+#   begin
+#     if n.odd?
+#       1.upto(n) do | row |
+#         if row
+#           puts "#{'*'} #{'= ' * (n -2)}#{'*'}"
+#         else
+#           puts "#{'* ' * n}"
+#         end
+#       end
+#     else
+#       puts 'Must odd number!'
+#     end
+#   rescue
+#     puts 'Must integer number!'
+#   end
+# end
+# square(7)
+
+
+
+
+
+
+#  size = 7
+
+# a = Array.new(size, '*').fill('=', 1..-2).join(' ') #=> "* = = = = = *"
+# b = Array.new(size, '=').fill('*', 1..-2).join(' ')
+# c = Array.new(size, '=').fill('*', 2..-3).join(' ')
+# f = Array.new(size, '=').fill('*', 3..-4).join(' ')
+# pattern = [a, b, c, f]
+# puts pattern.take(size)
+
+class ChessBoard
+  def initialize
+     @board = Array.new( 7 ){ Array.new( 7 ) }
+  end
+
+  def populate_new_board
+     @board.each {| row | row.map! {| _ | 'pawn' } }
   end
 end
-new_animal = Animal.new
-new_animal.say word'word1', word2 key: 'value', key: 5
