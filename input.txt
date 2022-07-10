@@ -1,13 +1,14 @@
-1,2,3,4,5,6,7,8,9,10
-What is Lorem Ipsum?
-Lorem Ipsum is simply dummy
- text of the printing and typesetting industry
- . Lorem Ipsum has been the industry's standard dummy text
-  ever since the 1500s, when an unknown printer
-   took a galley of type and scrambled it to make a type
-    specimen book. It has survived not only five centuries,
-     but also the leap into electronic typesetting, remaining essentially unchanged.
-      It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-      Ipsum passages, and more recently with desktop publishing software like Aldus
-      PageMaker including versions of
-       Lorem Ipsum.
+1,2,3,4,5,6
+
+Объе́ктно-ориенти́рованное программи́рование (сокр. ООП) — методология программирования,
+основанная на представлении программы в виде совокупности взаимодействующих объектов,
+каждый из которых является экземпляром определённого класса, а классы образуют иерархию наследования.
+
+Идеологически ООП — подход к программированию как к моделированию информационных объектов,
+решающий на новом уровне основную задачу структурного программирования: структурирование информации с точки зрения управляемости,
+то существенно улучшает управляемость самим процессом моделирования, что, в свою очередь, особенно важно при реализации крупных проектов.
+
+Управляемость для иерархических систем предполагает минимизацию избыточности данных (аналогичную нормализации) и их целостность,
+поэтому созданное удобно управляемым — будет и удобно пониматься. Таким образом,
+через тактическую задачу управляемости решается стратегическая задача — транслировать понимание задачи программистом
+ в наиболее удобную для дальнейшего использования форму.

@@ -87,13 +87,3 @@
 # f = Array.new(size, '=').fill('*', 3..-4).join(' ')
 # pattern = [a, b, c, f]
 # puts pattern.take(size)
-
-class ChessBoard
-  def initialize
-     @board = Array.new( 7 ){ Array.new( 7 ) }
-  end
-
-  def populate_new_board
-     @board.each {| row | row.map! {| _ | 'pawn' } }
-  end
-end
